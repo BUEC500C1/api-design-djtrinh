@@ -9,7 +9,7 @@ class weather_api():
     def __init__(self):
         self.airports = pd.read_csv("airports.csv")
 
-    
+
     def find_airport_read(self, code):
         data = self.airports[self.airports['iata_code'].str.contains(code.upper(), na=False)]
         
@@ -26,20 +26,17 @@ class weather_api():
         elif (len(code) != 3):
             print("Please enter a valid airport code\n")
             return -1
-        
+
         loc = self.find_airport_read(code)
 
         if(loc == -1):
             print("Please enter a valid airport code\n")
             return -1
         else:
-            response = urlopen('https://api.weather.gov/points/' 
+            response = urlopen('https://api.weather.gov/points/'
                                + str(loc[0])+','+str(loc[1]))
             data = json.load(response)
             url = data['properties']['forecastHourly']
             response = urlopen(url)
             data = json.load(response)
-            
             return data
-                
-            
