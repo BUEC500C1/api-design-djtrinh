@@ -16,7 +16,7 @@ class weather_api():
         else:
             return data.iloc[0, 4], data.iloc[0, 5]
 
-    def get_weather(self, code):
+    def get_weather(self, code, option):
         if (code.isalpha() is False):
             print("Please enter a valid airport code\n")
             return -1
@@ -33,7 +33,12 @@ class weather_api():
             response = urlopen('https://api.weather.gov/points/'
                                + str(loc[0])+','+str(loc[1]))
             data = json.load(response)
-            url = data['properties']['forecastHourly']
+
+            if(option == 0):
+                url = data['properties']['forecast']
+            else:
+                url = data['properties']['forecastHourly']
+                
             response = urlopen(url)
             data = json.load(response)
             return data

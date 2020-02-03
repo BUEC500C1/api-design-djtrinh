@@ -48,7 +48,7 @@ def main():
         if(code.lower() == "exit"):
             break
         else:
-            data = api.get_weather(code)
+            data = api.get_weather(code, 1)
             if data != -1:
                 plot_data(data, code)
 
