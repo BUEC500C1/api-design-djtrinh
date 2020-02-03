@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In this API, the weather information is obtained from the National Weeather Service. The user is able to obtain a week weather forcast or a full day hourly forecast with an airport IATA code as the input. The reason why we chose the NWS instead of OpenWeather because of the lack of limitations in how many times data could be fetched. Also, hour by hour weather information is possible with the NWS information whereas OpenWeather would require paying for such a feature. Another advantage of the NWS API is that no key is required.
+In this API, the weather information is obtained from the National Weather Service. The user is able to obtain a week weather forcast or a full day hourly forecast with an airport IATA code as the input. The reason why we chose the NWS instead of OpenWeather because of the lack of limitations in how many times data could be fetched. Also, hour by hour weather information is possible with the NWS information whereas OpenWeather would require paying for such a feature. Another advantage of the NWS API is that no key is required.
 
 ### How to test
 
@@ -16,6 +16,9 @@ python main.py
 
 The following is a snippet of the CLI interface:
 
+![Image of CLI](https://github.com/BUEC500C1/api-design-djtrinh/blob/master/CLI_Airport.PNG)
+
+![Image of Plot](https://github.com/BUEC500C1/api-design-djtrinh/blob/master/Plot_Weather.PNG)
 
 ### About the API
 
