@@ -30,15 +30,18 @@ class weather_api():
             print("Please enter a valid airport code\n")
             return -1
         else:
-            response = urlopen('https://api.weather.gov/points/'
-                               + str(loc[0])+','+str(loc[1]))
-            data = json.load(response)
+            try:
+                response = urlopen('https://api.weather.gov/points/'
+                                   + str(loc[0])+','+str(loc[1]))
+                data = json.load(response)
 
-            if(option == 0):
-                url = data['properties']['forecast']
-            else:
-                url = data['properties']['forecastHourly']
+                if(option == 0):
+                    url = data['properties']['forecast']
+                else:
+                    url = data['properties']['forecastHourly']
                 
-            response = urlopen(url)
-            data = json.load(response)
-            return data
+                response = urlopen(url)
+                data = json.load(response)
+                return data
+            except:
+                return -1
