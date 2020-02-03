@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 
@@ -43,5 +44,5 @@ class weather_api():
                 response = urlopen(url)
                 data = json.load(response)
                 return data
-            except:
+            except HTTPError:
                 return -1
