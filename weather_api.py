@@ -17,7 +17,7 @@ class weather_api():
             return data.iloc[0, 4], data.iloc[0, 5]
 
     def get_weather(self, code):
-        if (code.isalpha() == False):
+        if (code.isalpha() is False):
             print("Please enter a valid airport code\n")
             return -1
         elif (len(code) != 3):
