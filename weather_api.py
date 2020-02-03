@@ -5,19 +5,16 @@ from urllib.request import urlopen
 
 class weather_api():
 
-    
     def __init__(self):
         self.airports = pd.read_csv("airports.csv")
 
-
     def find_airport_read(self, code):
         data = self.airports[self.airports['iata_code'].str.contains(code.upper(), na=False)]
-        
+
         if(data.empty):
             return -1
         else:
             return data.iloc[0, 4], data.iloc[0, 5]
-
 
     def get_weather(self, code):
         if (code.isalpha() == False):

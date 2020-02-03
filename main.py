@@ -2,7 +2,6 @@ import weather_api as w_api
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-import json
 
 
 def plot_data(data, code):
@@ -52,7 +51,6 @@ def main():
             data = api.get_weather(code)
             if data != -1:
                 plot_data(data, code)
-
 
 
 main()
